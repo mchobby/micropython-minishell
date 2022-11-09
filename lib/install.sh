@@ -2,6 +2,7 @@
 SER="/dev/ttyACM0"
 echo "Copy to $SER..."
 
+mpremote connect $SER fs mkdir /lib
 for entry in `ls *.py`; do
 	 mpremote connect $SER fs cp $entry :/lib/$entry
 done

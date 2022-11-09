@@ -48,6 +48,11 @@ Help is fully detailled in the file [mshell.txt](lib/mshell.txt).
 
 Start it by key-in `import mshell` from REPL prompt.
 
+## Editor
+The edit statement is implemented with the [micropython editor from robert-hh](https://github.com/robert-hh/Micropython-Editor) which is a VT100 text editor.
+
+You will find [keyboard shortcuts on the readme file](https://github.com/robert-hh/Micropython-Editor).
+
 # Revision
 0.0.7
 * add ap plugins to control the access point.
@@ -100,6 +105,7 @@ def ptest( shell, args ):
 
 # TODO list
 
+* mshell -> wifi connect (with fix IP)
 * mshell -> support args parsing for "aa bbb"
 * mshell -> fully support sub-directory (cd, pwd)
 * mshell -> set : support environment variable
