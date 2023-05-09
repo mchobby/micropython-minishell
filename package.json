@@ -1,0 +1,18 @@
+{
+  "urls": [
+    ["__ap.py", "github:mchobby/micropython-minishell/lib/__ap.py"],
+		["__append.py", "github:mchobby/micropython-minishell/lib/__append.py"],
+		["__df.py", "github:mchobby/micropython-minishell/lib/__df.py"],
+		["__hexdump.py", "github:mchobby/micropython-minishell/lib/__hexdump.py"],
+		["__ifconfig.py", "github:mchobby/micropython-minishell/lib/__ifconfig.py"],
+		["__touch.py", "github:mchobby/micropython-minishell/lib/__touch.py"],
+		["__uname.py", "github:mchobby/micropython-minishell/lib/__uname.py"],
+		["__wifi.py", "github:mchobby/micropython-minishell/lib/__wifi.py"],
+		["mshell.py", "github:mchobby/micropython-minishell/lib/mshell.py"],
+		["mshell.txt", "github:mchobby/micropython-minishell/lib/mshell.txt"],
+		["pye.py", "github:mchobby/micropython-minishell/lib/pye.py"],
+		["/wifi_cfg.sample", "github:mchobby/micropython-minishell/examples/wifi_cfg.sample"],
+		["/boot.sample", "github:mchobby/micropython-minishell/examples/boot.timeout.sample"]
+  ],
+  "version": "0.0.7"
+}

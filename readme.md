@@ -48,6 +48,22 @@ Help is fully detailled in the file [mshell.txt](lib/mshell.txt).
 
 Start it by key-in `import mshell` from REPL prompt.
 
+## Installer
+
+Sur une plateforme connectée:
+
+```
+>>> import mip
+>>> mip.install("github:mchobby/micropython-minishell")
+```
+
+Ou via l'utilitaire mpremote :
+
+```
+mpremote mip install github:mchobby/micropython-minishell
+```
+
+
 ## Editor
 The edit statement is implemented with the [micropython editor from robert-hh](https://github.com/robert-hh/Micropython-Editor) which is a VT100 text editor.
 
