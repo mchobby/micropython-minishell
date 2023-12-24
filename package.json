@@ -13,7 +13,7 @@
 		["pye.py", "github:mchobby/micropython-minishell/lib/pye.py"],
 		["wifi_cfg.sample", "github:mchobby/micropython-minishell/examples/wifi_cfg.sample"],
 		["boot.sample", "github:mchobby/micropython-minishell/examples/boot.timeout.sample"],
-		["repl_uart.sample", "github:mchobby/micropython-minishell/examples/repl.over.usb.sample"]
+		["repl_uart.sample", "github:mchobby/micropython-minishell/examples/repl.over.uart.sample"]
   ],
   "version": "0.0.8"
 }
