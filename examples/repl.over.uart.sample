@@ -1,0 +1,7 @@
+from machine import UART
+# Pico: GP0=tx, GP1=rx
+uart = UART(0, baudrate=115200 )
+from os import dupterm
+dupterm( uart )
+# from mshell import shell
+# shell()

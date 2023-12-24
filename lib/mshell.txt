@@ -43,9 +43,10 @@ LIMITATION:
 Start Mini Shell
 ----------------
 Type the following in REPL to starts mshell
-   import mshell
+   from mshell import shell
+   shell()
 or
-   mshell.run() # to restart
+   shell() # to restart after exit
 
 
 $ help

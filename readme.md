@@ -46,7 +46,7 @@ df         : Disk Free/disk usage               : df -OR- df /sd
 ```
 Help is fully detailled in the file [mshell.txt](lib/mshell.txt).
 
-Start it by key-in `import mshell` from REPL prompt.
+Start it from REPL prompt by key-in `from mshell import shell` then `shell()`.
 
 ## Installer
 
@@ -68,6 +68,10 @@ mpremote mip install github:mchobby/micropython-minishell
 The edit statement is implemented with the [micropython editor from robert-hh](https://github.com/robert-hh/Micropython-Editor) which is a VT100 text editor.
 
 You will find [keyboard shortcuts on the readme file](https://github.com/robert-hh/Micropython-Editor).
+
+# Revision
+0.0.8
+* shell no more executed at import. Use `from mshell import shell` then `shell()` .
 
 # Revision
 0.0.7

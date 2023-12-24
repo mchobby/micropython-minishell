@@ -5,7 +5,7 @@ import micropython
 
 micropython.kbd_intr(-1) # Disable ctrl-C
 
-__version__ = "0.0.7"
+__version__ = "0.0.8"
 
 COMMANDS = [ 'help', 'cat', 'cp', 'exit', 'edit', 'free', 'ls', 'more', 'mv', 'rm', 'run' ]
 
@@ -75,7 +75,7 @@ def run_edit( shell, args ):
 		shell.println( "filename required!")
 		return 1
 	import pye # requires  https://github.com/robert-hh/Micropython-Editor/blob/master/pye.py
-	_io_dev = pye.IO_DEVICE() 
+	_io_dev = pye.IO_DEVICE()
 	pye.pye_edit( [args[0]], tab_size=4, undo=50, io_device=_io_dev )
 	_io_dev.deinit_tty()
 	return 0
@@ -261,7 +261,7 @@ class MiniShell:
 
 _ms = None
 
-def run():
+def shell():
 	global _ms
 	print( "                   __        ___          " )
 	print( " |\/| | |\ | |    /__` |__| |__  |    |   " )
@@ -273,9 +273,10 @@ def run():
 	print( "plugins :", ", ".join(_ms.list_plugins()) )
 	print( "Python  : %s" % sys.version )
 	print( "Free Mem: %i bytes" % gc.mem_free() )
-	print( "Use mshell.run() to restart!")
+	print( "Use shell() to restart!")
 	print( " " )
 
 	_ms.run()
 
-run()
+# Uncomment to auto-start at import 
+# shell()
