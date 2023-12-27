@@ -3,7 +3,7 @@ import gc
 import sys
 import micropython
 
-micropython.kbd_intr(-1) # Disable ctrl-C
+#  micropython.kbd_intr(-1) # Disable ctrl-C
 
 __version__ = "0.0.8"
 
@@ -144,10 +144,17 @@ def run_exit( shell, args ):
 	raise Exit()
 
 def run_help( shell, args ):
-	if shell.file_size( '/lib/mshell.txt' )>0:
-		return run_more( shell, ['/lib/mshell.txt'] )
-	else:
-		return run_more( shell, ['mshell.txt'] )
+	if len(args)<1:
+		if shell.file_size( '/lib/mshell.txt' )>0:
+			return run_more( shell, ['/lib/mshell.txt'] )
+		else: # try to find it in the current directory
+			return run_more( shell, ['mshell.txt'] )
+	else: # an argument ?
+		sfilename = "/lib/%s.txt" % args[0].lower()
+		if shell.file_size( sfilename )>0:
+			return run_more( shell, [sfilename] )
+		else:
+			shell.println( 'no help for %s' % args[0].lower() )
 
 # ----MiniShell Core ----
 class MiniShell:
@@ -278,5 +285,5 @@ def shell():
 
 	_ms.run()
 
-# Uncomment to auto-start at import 
+# Uncomment to auto-start at import
 # shell()

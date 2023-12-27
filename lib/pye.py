@@ -103,12 +103,11 @@ class Editor:
     "\x1b[1;5C": KEY_WORD_RIGHT,
     "\x03"   : KEY_COPY,
     "\r"     : KEY_ENTER,
-    "\x7f"   : KEY_BACKSPACE,
+    "\x08"   : KEY_BACKSPACE, #"\x7f"   : KEY_BACKSPACE,
     "\x1b[3~": KEY_DELETE,
     "\x1b[Z" : KEY_BACKTAB,
     "\x19"   : KEY_REDO,
-    "\x08"   : KEY_REPLC,
-    "\x12"   : KEY_REPLC,
+    "\x12"   : KEY_REPLC, # "\x08"   : KEY_REPLC, 0x08 is backspace
     "\x11"   : KEY_QUIT,
     "\x1b"   : KEY_QUIT,
     "\n"     : KEY_ENTER,
@@ -250,6 +249,7 @@ class Editor:
                         break
             if in_buffer in Editor.KEYMAP:
                 c = Editor.KEYMAP[in_buffer]
+                #self.wr("DEBUG: KeyMap for in_buffer read a %s" % hex(c))
                 if c != KEY_MOUSE:
                     return c, None
                 else:
@@ -600,7 +600,7 @@ class Editor:
                 line = char[1] + self.top_line
                 if (col, line) == self.mouse_last[:2] and (time.time() - self.mouse_last[2]) < 2:
                     self.mouse_last = (0, 0, 0)
-                    if self.mark is None and col < len(l) and self.issymbol(l[col], Editor.word_char): 
+                    if self.mark is None and col < len(l) and self.issymbol(l[col], Editor.word_char):
                             self.col = self.skip_while(l, col, Editor.word_char, -1) + 1
                             self.set_mark()
                             self.col = self.skip_while(l, self.col, Editor.word_char, 1)
@@ -763,7 +763,7 @@ class Editor:
                         c = 0 if way > 0 else len(self.content[i]) - 1
                     self.message = "No match in {} lines".format(abs(lstop - self.cur_line))
         elif key == KEY_MARK:
-            if self.mark is None: 
+            if self.mark is None:
                 self.set_mark()
                 self.move_right(l)
             else:

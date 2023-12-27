@@ -8,7 +8,7 @@ operations and may be a useful tool when dealing with REPL remotely.
 
 Command: Description             : Example
 -------+-------------------------+---------------------------------
-help   : display help file       : help
+help   : display help file       : help -OR- help edit 
 cat    : display file content    : cat main.py
 cp     : Copy file (binary)      : cp source.py destin.py
 edit   : start text editor       : pye main.py
