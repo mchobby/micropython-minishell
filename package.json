@@ -11,6 +11,7 @@
 		["mshell.py", "github:mchobby/micropython-minishell/lib/mshell.py"],
 		["mshell.txt", "github:mchobby/micropython-minishell/lib/mshell.txt"],
 		["pye.py", "github:mchobby/micropython-minishell/lib/pye.py"],
+		["edit.txt", "github:mchobby/micropython-minishell/lib/edit.txt"],
 		["wifi_cfg.sample", "github:mchobby/micropython-minishell/examples/wifi_cfg.sample"],
 		["boot.sample", "github:mchobby/micropython-minishell/examples/boot.timeout.sample"],
 		["repl_uart.sample", "github:mchobby/micropython-minishell/examples/repl.over.uart.sample"]
